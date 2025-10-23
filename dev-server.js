@@ -1,11 +1,11 @@
-// Vercel serverless function entry point
 import express from 'express';
 import cors from 'cors';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import mockDb from './mock-db.js';
+import mockDb from './api/mock-db.js';
 
 const app = express();
+const PORT = 5000;
 
 // Middleware
 app.use(cors());
@@ -174,5 +174,40 @@ app.get('/api/health', (req, res) => {
   res.status(200).json({ status: 'UP', message: 'Backend is healthy' });
 });
 
-// Export the Express app as a Vercel serverless function
-export default app;
+// Pre-create demo accounts
+const demoAccounts = [
+  {
+    username: 'demo_trader',
+    email: 'demo@unitrade.com',
+    password: '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi' // password: 'password'
+  },
+  {
+    username: 'john_doe',
+    email: 'john@example.com',
+    password: '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi' // password: 'password'
+  },
+  {
+    username: 'jane_smith',
+    email: 'jane@example.com',
+    password: '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi' // password: 'password'
+  },
+  {
+    username: 'crypto_enthusiast',
+    email: 'crypto@example.com',
+    password: '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi' // password: 'password'
+  }
+];
+
+// Initialize demo accounts
+demoAccounts.forEach(account => {
+  mockDb.createUser(account);
+});
+
+app.listen(PORT, () => {
+  console.log(`Development server running on http://localhost:${PORT}`);
+  console.log('Demo accounts available:');
+  console.log('- demo@unitrade.com (password: password)');
+  console.log('- john@example.com (password: password)');
+  console.log('- jane@example.com (password: password)');
+  console.log('- crypto@example.com (password: password)');
+});

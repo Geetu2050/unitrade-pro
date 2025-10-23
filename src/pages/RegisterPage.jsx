@@ -37,7 +37,9 @@ const RegisterPage = () => {
       await register({ username: formData.username, email: formData.email, password: formData.password })
       navigate('/dashboard')
     } catch (err) {
-      setError('Registration failed. Try a different email.')
+      console.error('Registration error:', err)
+      const errorMessage = err.response?.data?.message || 'Registration failed. Please try again.'
+      setError(errorMessage)
     } finally {
       setIsLoading(false)
     }

@@ -95,4 +95,33 @@ class MockDatabase {
 // Create a singleton instance
 const mockDb = new MockDatabase();
 
+// Pre-create demo accounts
+const demoAccounts = [
+  {
+    username: 'demo_trader',
+    email: 'demo@unitrade.com',
+    password: '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi' // password: 'password'
+  },
+  {
+    username: 'john_doe',
+    email: 'john@example.com',
+    password: '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi' // password: 'password'
+  },
+  {
+    username: 'jane_smith',
+    email: 'jane@example.com',
+    password: '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi' // password: 'password'
+  },
+  {
+    username: 'crypto_enthusiast',
+    email: 'crypto@example.com',
+    password: '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi' // password: 'password'
+  }
+];
+
+// Initialize demo accounts
+demoAccounts.forEach(account => {
+  mockDb.createUser(account);
+});
+
 export default mockDb;
