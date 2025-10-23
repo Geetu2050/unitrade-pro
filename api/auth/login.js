@@ -1,6 +1,14 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import mockDb from '../mock-db.js';
+
+// Simple in-memory database (same as register)
+const users = new Map();
+
+const mockDb = {
+  findUserByEmail: (email) => {
+    return users.get(email) || null;
+  }
+};
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
