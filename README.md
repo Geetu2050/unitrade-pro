@@ -33,6 +33,12 @@ A comprehensive full-stack fintech simulator application built with React, Node.
 - **bcryptjs** - Password hashing
 - **CORS** - Cross-origin resource sharing
 
+## 🚀 Quick Deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Geetu2050/unitrade-pro)
+
+**One-click deployment to Vercel!** Just click the button above and your app will be live in minutes.
+
 ## 🚀 Quick Start
 
 ### Prerequisites
