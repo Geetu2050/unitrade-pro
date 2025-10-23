@@ -1,7 +1,7 @@
-import { create } from 'zustand'
+import { createWithEqualityFn } from 'zustand/traditional'
 import { api, authHeader } from '../lib/api'
 
-const useUserStore = create((set, get) => ({
+const useUserStore = createWithEqualityFn((set, get) => ({
   // Auth
   isLoggedIn: false,
   user: null,

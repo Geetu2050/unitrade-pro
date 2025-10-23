@@ -5,7 +5,17 @@ export const api = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
+  timeout: 10000, // 10 second timeout
 })
+
+// Add response interceptor for error handling
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    console.error('API Error:', error)
+    return Promise.reject(error)
+  }
+)
 
 export const authHeader = (token) => ({
   headers: { Authorization: `Bearer ${token}` },
