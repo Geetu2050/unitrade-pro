@@ -35,9 +35,12 @@ A comprehensive full-stack fintech simulator application built with React, Node.
 
 ## 🚀 Quick Deploy
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Geetu2050/unitrade-pro)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Geetu2050/unitrade-pro)
 
-**One-click deployment to Vercel!** Just click the button above and your app will be live in minutes.
+**One-click deployment to Netlify!** Just click the button above and your app will be live in minutes.
+
+### Alternative Deployments:
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Geetu2050/unitrade-pro)
 
 ## 🚀 Quick Start
 
